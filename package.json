@@ -4,7 +4,7 @@
 	      "description": "Image Converter Web App",
 	        "main": "index.js",
 		  "scripts": {
-			      "start": "node index.js"
+			      "start": "node index.js",
 			  "dev": "npm run dev"
 			        },
 				  "author": "Abdelbar AD",
