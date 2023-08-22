@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		    <meta charset="UTF-8">
-		        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-			    <title>Image Converter</title>
-			        <link rel="stylesheet" href="style.css">
-				    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-	</head>
-	<body>
-		    <div class="container">
-			            <h1>Image Converter</h1>
-				            <input type="file" id="imageInput">
-					            <select id="formatSelect">
-							                <option value="jpeg">JPEG</option>
-									            <option value="png">PNG</option>
-										                <option value="gif">GIF</option>
-												            <option value="pdf">PDF</option>
-													            </select>
-														            <button id="convertButton">Convert</button>
-															            <a id="downloadLink" style="display: none;" download>Download Converted Image</a>
-																        </div>
-																	    <script src="index.js"></script>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Converter</h1>
+        <input type="file" id="imageInput">
+        <select id="formatSelect">
+            <option value="jpeg">JPEG</option>
+            <option value="png">PNG</option>
+            <option value="gif">GIF</option>
+            <option value="pdf">PDF</option>
+        </select>
+        <button id="convertButton">Convert</button>
+        <a id="downloadLink" style="display: none;" download>Download Converted Image</a>
+    </div>
+    <!-- Load your custom JavaScript file here -->
+    <script src="index.js"></script>
+</body>
 </html>
