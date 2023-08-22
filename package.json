@@ -1,0 +1,17 @@
+{
+	  "name": "image-converter",
+	    "version": "1.0.0",
+	      "description": "Image Converter Web App",
+	        "main": "index.js",
+		  "scripts": {
+			      "start": "node index.js"
+			        },
+				  "author": "Your Name",
+				    "license": "MIT",
+				      "dependencies": {
+					          "express": "^4.17.1",
+						      "jsdom": "^17.0.0",
+						          "jspdf": "^2.4.0"
+							    }
+}
+
