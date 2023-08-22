@@ -5,8 +5,9 @@
 	        "main": "index.js",
 		  "scripts": {
 			      "start": "node index.js"
+			  "dev": "npm run dev"
 			        },
-				  "author": "Your Name",
+				  "author": "Abdelbar AD",
 				    "license": "MIT",
 				      "dependencies": {
 					          "express": "^4.17.1",
