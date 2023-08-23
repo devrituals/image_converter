@@ -7,39 +7,30 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
     <style>
-        .seo-text {
-            padding: 20px;
-            background-color: #f5f5f5;
-            border: 1px solid #ddd;
-            margin-top: 20px;
-        }
-
-        .seo-text h2 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .seo-text p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        .seo-text ul {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 10px;
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
-            margin: 20px auto;
-            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        #imageInput,
-        #formatSelect,
-        #convertButton {
-            margin-top: 10px;
+        /* Your existing styling for .seo-text */
+
+        /* Additional styling for the container and footer */
+        .footer {
+            padding: 20px;
+            background-color: #f5f5f5;
+            text-align: center;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -76,12 +67,13 @@
         <p>Contact Us</p>
         <p>Have questions or feedback? We'd love to hear from you. Reach out to our friendly support team at support@convertimagefree.com or use our contact form on the website.</p>
         <p>Stay connected with us on social media for updates and tips on optimizing your file conversion experience.</p>
-        <p>[Facebook icon] [Twitter icon] [Instagram icon]</p>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
         <p>Copyright © 2023 Image Converter. All rights reserved.</p>
     </div>
 
-    <!-- Load your custom JavaScript file here -->
     <script src="index.js"></script>
 </body>
 </html>
-
