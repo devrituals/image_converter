@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             reader.onload = function(e) {
                 if (selectedFormat === "pdf") {
                     // Convert to PDF format
-                    var pdf = new jsPDF();
+                    const pdf = new jsPDF();
                     const imgData = e.target.result;
                     pdf.addImage(imgData, "JPEG", 10, 10, 100, 75);
                     const pdfDataUrl = pdf.output("dataurl");
