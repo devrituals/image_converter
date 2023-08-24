@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     
                     // Add title to header
                     pdf.setFontSize(16);
-                    pdf.text("Image to PDF Conversion", 20, 10);
+                    pdf.text( 20, 10);
                     
                     // Save the PDF
                     const blob = pdf.output("blob");
