@@ -21,21 +21,24 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
         }
 
         /* Your existing styling for .seo-text */
 
-        /* Additional styling for .seo-text h2 on mobile devices */
+        /* Additional styling for .seo-text h2 on smaller screens */
         @media screen and (max-width: 630px) {
             .seo-text h2 {
-                display: block;
                 font-size: 24px; /* Adjust the font size as needed */
-                margin: 20px 0; /* Adjust the margin as needed */
+                margin-top: 20px; /* Adjust the margin as needed */
+            }
+        }
+
+        /* Your existing styling for button, input[type="file"], select */
+
+        /* Additional styling for smaller screens */
+        @media screen and (max-width: 630px) {
+            .container {
+                padding: 10px; /* Adjust the padding as needed */
             }
         }
         /* Additional styling for the container and footer */
