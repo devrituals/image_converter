@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     const pdf = new jsPDF();
                     const imgData = e.target.result;
                     pdf.addImage(imgData, "JPEG", 10, 10, 100, 75);
-                    const pdfDataUrl = pdf.output("dataurl");
+                    const blob = pdf.output("blob");
+                    const pdfDataUrl = URL.createObjectURL(blob);
                     downloadLink.href = pdfDataUrl;
                     downloadLink.download = convertedFileName;
                     downloadLink.style.display = "block";
