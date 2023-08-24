@@ -25,13 +25,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     const pdfDataUrl = URL.createObjectURL(blob);
                     downloadLink.href = pdfDataUrl;
                     downloadLink.download = convertedFileName;
-                    downloadLink.style.display = "block";
+                    downloadLink.style.display = "flex";
                 } else {
                     // Convert to image format
                     const convertedDataUrl = e.target.result;
                     downloadLink.href = convertedDataUrl;
                     downloadLink.download = convertedFileName;
-                    downloadLink.style.display = "block";
+                    downloadLink.style.display = "flex";
                 }
             };
             reader.readAsDataURL(selectedFile);
