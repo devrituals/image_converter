@@ -4,8 +4,8 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center horizontally; /* Center horizontally */
-    align-items: center vertically; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     min-height: 100vh; 
 }
 
