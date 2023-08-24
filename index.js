@@ -16,7 +16,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     // Convert to PDF format
                     const pdf = new jsPDF();
                     const imgData = e.target.result;
-                    pdf.addImage(imgData, "JPEG", 10, 10, 100, 75);
+                    
+                    // Set PDF page size and orientation
+                    pdf.addImage(imgData, "JPEG", 20, 20, 160, 120); // Adjust image placement and dimensions
+                    
+                    // Add title to header
+                    pdf.setFontSize(16);
+                    pdf.text("Image to PDF Conversion", 20, 10);
+                    
+                    // Save the PDF
                     const blob = pdf.output("blob");
                     const pdfDataUrl = URL.createObjectURL(blob);
                     downloadLink.href = pdfDataUrl;
