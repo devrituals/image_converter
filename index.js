@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     // Set PDF page size and orientation
                     const options = {
-                        format: "JPEG",
+                        format: "JPEG", // You can modify this based on selected format
                         orientation: "portrait",
                         unit: "mm",
                         width: 160,
                         height: 120
                     };
-                    pdf.addImage(imgData, options.format, 20, 20, options.width, options.height);
+                    pdf.addImage(imgData, options.format, 20, 20, options.width, options.height, undefined, "FAST");
 
                     // Save the PDF
                     const blob = pdf.output("blob");
