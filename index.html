@@ -12,6 +12,8 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -22,22 +24,22 @@
             justify-content: center;
         }
 
-        /* Your existing styling for .seo-text */
-
-        /* Additional styling for .seo-text h2 on smaller screens */
-        @media screen and (max-width: 630px) {
-            .seo-text h2 {
-                font-size: 24px; /* Adjust the font size as needed */
-                margin-top: 20px; /* Adjust the margin as needed */
-            }
+        .seo-text {
+            text-align: center;
+            padding: 20px;
+            font-size: 16px; /* Adjust the font size as needed */
+            background-color: #f0f0f0; /* Set a background color */
+            border-radius: 10px; /* Add border radius for a rounded look */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            margin: 20px; /* Add margin to separate it from other sections */
         }
 
-        /* Your existing styling for button, input[type="file"], select */
-
-        /* Additional styling for smaller screens */
+        /* Additional styles for .seo-text h2 on mobile devices */
         @media screen and (max-width: 630px) {
-            .container {
-                padding: 10px; /* Adjust the padding as needed */
+            .seo-text h2 {
+                display: block;
+                font-size: 24px; /* Adjust the font size as needed */
+                margin: 20px 0; /* Adjust the margin as needed */
             }
         }
         /* Additional styling for the container and footer */
