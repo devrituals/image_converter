@@ -16,17 +16,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     // Convert to PDF format
                     const pdf = new jsPDF();
                     const imgData = e.target.result;
-
+                    
                     // Set PDF page size and orientation
-                    const options = {
-                        format: "JPEG", // You can modify this based on selected format
-                        orientation: "portrait",
-                        unit: "mm",
-                        width: 160,
-                        height: 120
-                    };
-                    pdf.addImage(imgData, options.format, 20, 20, options.width, options.height, undefined, "FAST");
-
+                    pdf.addImage(imgData, "JPEG", 20, 20, 160, 120); // Adjust image placement and dimensions
+                    
                     // Save the PDF
                     const blob = pdf.output("blob");
                     const pdfDataUrl = URL.createObjectURL(blob);
