@@ -4,9 +4,9 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Changed from height: 150vh */
+    justify-content: center horizontally; /* Center horizontally */
+    align-items: center vertically; /* Center vertically */
+    min-height: 100vh; 
 }
 
 .container {
