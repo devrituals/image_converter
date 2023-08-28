@@ -9,12 +9,6 @@ body {
     min-height: 100vh; 
 }
 
-.ad-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
 .container {
     background-color: #fff;
     padding: 20px;
