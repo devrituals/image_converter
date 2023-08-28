@@ -10,13 +10,23 @@ body {
 }
 
 .banner-ad {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f5f5; /* Set a background color if needed */
-    padding: 10px 0; /* Add some spacing around the ad */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #f5f5f5;
+   padding: 5px; /* Adjust padding for spacing */
+   margin: 10px auto; /* Center the ad and adjust margins */
+   max-width: 100%; /* Ensure responsiveness */
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+   .banner-ad {
+      padding: 3px; /* Adjust padding for smaller screens */
+      margin: 5px auto; /* Adjust margins for smaller screens */
+   }
+}
 
 .container {
     background-color: #fff;
