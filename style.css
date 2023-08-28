@@ -9,6 +9,14 @@ body {
     min-height: 100vh; 
 }
 
+.ad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin: 20px 0; /* Add margin to separate it from other sections */
+}
+
 .container {
     background-color: #fff;
     padding: 20px;
