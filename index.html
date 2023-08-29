@@ -13,43 +13,40 @@
         body {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            min-height: 100vh;
             margin: 0;
             padding: 0;
-            min-height: 100vh;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
         }
 
         .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 90%; /* Adjusted max-width for responsiveness */
-        }
-
-        .ad-container {
+            flex: 1;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            width: 100%;
+            justify-content: center;
+            max-width: 100%
         }
 
-        h1 {
-            margin-top: 0;
+        .seo-text {
+            text-align: center;
+            padding: 20px;
+            font-size: 16px; /* Adjust the font size as needed */
+            background-color: #f0f0f0; /* Set a background color */
+            border-radius: 10px; /* Add border radius for a rounded look */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            margin: 20px; /* Add margin to separate it from other sections */
         }
 
-        button {
-            margin-top: 10px;
+        
+        @media screen and (max-width: 630px) {
+            .seo-text h2 {
+                display: flex;
+                font-size: 24px; /* Adjust the font size as needed */
+                margin: 20px 0; /* Adjust the margin as needed */
+            }
         }
-
-        input[type="file"], select {
-            margin-top: 10px;
-        }
-
+        
+        
         .footer {
             padding: 20px;
             background-color: #f5f5f5;
