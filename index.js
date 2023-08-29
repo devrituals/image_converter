@@ -1,4 +1,5 @@
 window.jsPDF = window.jspdf.jsPDF;
+window.resizeTo(728,90);
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("convertButton").addEventListener("click", function() {
         const imageInput = document.getElementById("imageInput");
