@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 150%;
+    max-width: 250%;
     margin: 20px 0; /* Add margin to separate it from other sections */
 }
 
