@@ -26,8 +26,22 @@ document.addEventListener("DOMContentLoaded", function() {
                     downloadLink.href = pdfDataUrl;
                     downloadLink.download = convertedFileName;
                     downloadLink.style.display = "flex";
-                } else (selectedFormat === "tiff" || selectedFormat === "svg" || selectedFormat === "psd" || selectedFormat === "heif") {
-                    // Convert to image format
+                } else if (selectedFormat === "psd") {
+                    async function convertPSDToImage(psdBlob) {
+    const psd = await window.PSD.fromDroppedFile(psdBlob);
+    const merged = psd.image.toPng();
+    const url = URL.createObjectURL(new Blob([merged], { type: 'image/png' }));
+                } else if (selectedFormat === "tiff") {
+                    async function convertTIFFToImage(tiffBlob) {
+    const tiff = await window.Tiff.fromBlob(tiffBlob);
+    const canvas = tiff.toCanvas();
+                } else if (selectedFormat === "svg") {
+                    async function convertSVGToImage(svgString) {
+    const canvas = document.createElement('canvas');
+    canvg(canvas, svgString);
+    const url = canvas.toDataURL('image/png');
+                    }
+                }
                     const convertedDataUrl = e.target.result;
                     downloadLink.href = convertedDataUrl;
                     downloadLink.download = convertedFileName;
