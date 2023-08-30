@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     downloadLink.href = pdfDataUrl;
                     downloadLink.download = convertedFileName;
                     downloadLink.style.display = "flex";
-                } else {
+                } else (selectedFormat === "tiff" || selectedFormat === "svg" || selectedFormat === "psd" || selectedFormat === "heif") {
                     // Convert to image format
                     const convertedDataUrl = e.target.result;
                     downloadLink.href = convertedDataUrl;
