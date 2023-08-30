@@ -1,6 +1,7 @@
 window.jsPDF = window.jspdf.jsPDF;
+
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("convertButton").addEventListener("click", function() {
+    document.getElementById("convertButton").addEventListener("click", async function() {
         const imageInput = document.getElementById("imageInput");
         const formatSelect = document.getElementById("formatSelect");
         const downloadLink = document.getElementById("downloadLink");
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (selectedFile) {
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = async function(e) {
                 if (selectedFormat === "pdf") {
                     // Convert to PDF format
                     const pdf = new jsPDF();
@@ -27,23 +28,27 @@ document.addEventListener("DOMContentLoaded", function() {
                     downloadLink.download = convertedFileName;
                     downloadLink.style.display = "flex";
                 } else if (selectedFormat === "psd") {
-                    async function convertPSDToImage(psdBlob) {
-    const psd = await window.PSD.fromDroppedFile(psdBlob);
-    const merged = psd.image.toPng();
-    const url = URL.createObjectURL(new Blob([merged], { type: 'image/png' }));
+                    const psdBlob = await fetch(e.target.result).then(response => response.blob());
+                    const psd = await window.PSD.fromDroppedFile(psdBlob);
+                    const merged = psd.image.toPng();
+                    const url = URL.createObjectURL(new Blob([merged], { type: 'image/png' }));
+                    downloadLink.href = url;
+                    downloadLink.download = convertedFileName;
+                    downloadLink.style.display = "flex";
                 } else if (selectedFormat === "tiff") {
-                    async function convertTIFFToImage(tiffBlob) {
-    const tiff = await window.Tiff.fromBlob(tiffBlob);
-    const canvas = tiff.toCanvas();
+                    const tiffBlob = await fetch(e.target.result).then(response => response.blob());
+                    const tiff = await window.Tiff.fromBlob(tiffBlob);
+                    const canvas = tiff.toCanvas();
+                    const url = canvas.toDataURL('image/png');
+                    downloadLink.href = url;
+                    downloadLink.download = convertedFileName;
+                    downloadLink.style.display = "flex";
                 } else if (selectedFormat === "svg") {
-                    async function convertSVGToImage(svgString) {
-    const canvas = document.createElement('canvas');
-    canvg(canvas, svgString);
-    const url = canvas.toDataURL('image/png');
-                    }
-                }
-                    const convertedDataUrl = e.target.result;
-                    downloadLink.href = convertedDataUrl;
+                    const svgString = e.target.result;
+                    const canvas = document.createElement('canvas');
+                    canvg(canvas, svgString);
+                    const url = canvas.toDataURL('image/png');
+                    downloadLink.href = url;
                     downloadLink.download = convertedFileName;
                     downloadLink.style.display = "flex";
                 }
