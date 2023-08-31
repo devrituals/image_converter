@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     const imgData = e.target.result;
 
                     // Set PDF page size and orientation
-                    pdf.addImage(imgData, "JPEG", 20, 20, 168, 1123); // Adjust image placement and dimensions
+                    pdf.addImage(imgData, "JPEG", 20, 20, 168, 468); // Adjust image placement and dimensions
 
                     // Save the PDF
                     const blob = pdf.output("blob");
