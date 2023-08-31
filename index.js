@@ -18,15 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     const pdf = new jsPDF();
                     const imgData = e.target.result;
 
-                    const img = new Image();
-                    img.src = imgData;
-                    img.onload = function() {
-                        const pdfWidth = pdf.internal.pageSize.getWidth();
-                        const pdfHeight = (img.height / img.width) * pdfWidth;
-
-                        pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
-                        pdf.save(convertedFileName);
-                    };
+                    // Set PDF page size and orientation
+                    pdf.addImage(imgData, "JPEG", 20, 20); // Adjust image placement and dimensions
 
                     // Save the PDF
                     const blob = pdf.output("blob");
@@ -34,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     downloadLink.href = pdfDataUrl;
                     downloadLink.download = convertedFileName;
                     downloadLink.style.display = "flex";
-                } 
+                }
             };
             reader.readAsDataURL(selectedFile);
         }
