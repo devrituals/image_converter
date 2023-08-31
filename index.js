@@ -1,7 +1,6 @@
 window.jsPDF = window.jspdf.jsPDF;
-
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("convertButton").addEventListener("click", async function() {
+    document.getElementById("convertButton").addEventListener("click", function() {
         const imageInput = document.getElementById("imageInput");
         const formatSelect = document.getElementById("formatSelect");
         const downloadLink = document.getElementById("downloadLink");
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (selectedFile) {
             const reader = new FileReader();
-            reader.onload = async function(e) {
+            reader.onload = function(e) {
                 if (selectedFormat === "pdf") {
                     // Convert to PDF format
                     const pdf = new jsPDF();
@@ -25,6 +24,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     const blob = pdf.output("blob");
                     const pdfDataUrl = URL.createObjectURL(blob);
                     downloadLink.href = pdfDataUrl;
+                    downloadLink.download = convertedFileName;
+                    downloadLink.style.display = "flex";
+                } else {
+                    // Convert to image format
+                    const convertedDataUrl = e.target.result;
+                    downloadLink.href = convertedDataUrl;
                     downloadLink.download = convertedFileName;
                     downloadLink.style.display = "flex";
                 }
