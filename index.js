@@ -34,31 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     downloadLink.href = pdfDataUrl;
                     downloadLink.download = convertedFileName;
                     downloadLink.style.display = "flex";
-                } else if (selectedFormat === "psd") {
-                    const psdBlob = await fetch(e.target.result).then(response => response.blob());
-                    const psd = await window.PSD.fromDroppedFile(psdBlob);
-                    const merged = psd.image.toPng();
-                    const url = URL.createObjectURL(new Blob([merged], { type: 'image/png' }));
-                    downloadLink.href = url;
-                    downloadLink.download = convertedFileName;
-                    downloadLink.style.display = "flex";
-                } else if (selectedFormat === "tiff") {
-                    const tiffBlob = await fetch(e.target.result).then(response => response.blob());
-                    const tiff = await window.Tiff.fromBlob(tiffBlob);
-                    const canvas = tiff.toCanvas();
-                    const url = canvas.toDataURL('image/png');
-                    downloadLink.href = url;
-                    downloadLink.download = convertedFileName;
-                    downloadLink.style.display = "flex";
-                } else if (selectedFormat === "svg") {
-                    const svgString = e.target.result;
-                    const canvas = document.createElement('canvas');
-                    canvg(canvas, svgString);
-                    const url = canvas.toDataURL('image/png');
-                    downloadLink.href = url;
-                    downloadLink.download = convertedFileName;
-                    downloadLink.style.display = "flex";
-                }
+                } 
             };
             reader.readAsDataURL(selectedFile);
         }
