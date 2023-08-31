@@ -18,18 +18,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     const pdf = new jsPDF();
                     const imgData = e.target.result;
 
-const img = new Image();
-    img.src = imgData;
-    img.onload = function() {
-        const pageWidth = pdf.internal.pageSize.getWidth(); // Get PDF page width
-        const pageHeight = pdf.internal.pageSize.getHeight(); // Get PDF page height
-        const imgWidth = pageWidth - 40; // Leave some margin
-        const imgHeight = (img.height / img.width) * imgWidth;
+                    const img = new Image();
+                    img.src = imgData;
+                    img.onload = function() {
+                        const pdfWidth = pdf.internal.pageSize.getWidth();
+                        const pdfHeight = (img.height / img.width) * pdfWidth;
 
-        const xPosition = (pageWidth - imgWidth) / 2;
-        const yPosition = (pageHeight - imgHeight) / 2;
-
-        pdf.addImage(imgData, "JPEG", xPosition, yPosition, imgWidth, imgHeight);
+                        pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
+                        pdf.save(convertedFileName);
+                    };
 
                     // Save the PDF
                     const blob = pdf.output("blob");
