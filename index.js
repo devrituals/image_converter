@@ -18,18 +18,18 @@ document.addEventListener("DOMContentLoaded", function() {
                     const pdf = new jsPDF();
                     const imgData = e.target.result;
 
-                    const img = new Image();
+const img = new Image();
     img.src = imgData;
     img.onload = function() {
-        const aspectRatio = img.height / img.width;
+        const pageWidth = pdf.internal.pageSize.getWidth(); // Get PDF page width
+        const pageHeight = pdf.internal.pageSize.getHeight(); // Get PDF page height
+        const imgWidth = pageWidth - 40; // Leave some margin
+        const imgHeight = (img.height / img.width) * imgWidth;
 
-        // Set the maximum width for the image within the PDF
-        const maxWidth = 160;
+        const xPosition = (pageWidth - imgWidth) / 2;
+        const yPosition = (pageHeight - imgHeight) / 2;
 
-        // Calculate the corresponding height
-        const maxHeight = maxWidth * aspectRatio;
-
-                    pdf.addImage(imgData, "JPEG", 20, 20, maxWidth, maxHeight); // Adjust image placement and dimensions
+        pdf.addImage(imgData, "JPEG", xPosition, yPosition, imgWidth, imgHeight);
 
                     // Save the PDF
                     const blob = pdf.output("blob");
