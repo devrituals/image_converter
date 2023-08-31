@@ -18,7 +18,17 @@ document.addEventListener("DOMContentLoaded", function() {
                     const pdf = new jsPDF();
                     const imgData = e.target.result;
 
-                    // Set PDF page size and orientation
+                    const img = new Image();
+    img.src = imgData;
+    img.onload = function() {
+        const aspectRatio = img.height / img.width;
+
+        // Set the maximum width for the image within the PDF
+        const maxWidth = 160;
+
+        // Calculate the corresponding height
+        const maxHeight = maxWidth * aspectRatio;
+
                     pdf.addImage(imgData, "JPEG", 20, 20, maxWidth, maxHeight); // Adjust image placement and dimensions
 
                     // Save the PDF
