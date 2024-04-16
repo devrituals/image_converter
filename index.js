@@ -14,11 +14,17 @@ document.addEventListener("DOMContentLoaded", function() {
             reader.onload = function(e) {
                 if (selectedFormat === "pdf") {
                     // Convert to PDF format
-                    const pdf = new jsPDF();
-                    const imgData = e.target.result;
+                    const pdf = new pdf();
 
-                    // Set PDF page size and orientation
-                    pdf.addImage(imgData, "JPEG", 20, 20, 160, 120); // Adjust image placement and dimensions
+			// Set the compression level (0 = no compression, 1 = maximum compression)
+const compressionLevel = 0.8; // Adjust this value between 0 and 1
+
+// Calculate the image dimensions based on the aspect ratio
+const imgWidth = 160;
+const imgHeight = imgData.height * (imgWidth / imgData.width);
+
+// Add the image to the PDF with the desired compression level and dimensions
+pdf.addImage(imgData, "JPEG", compressionLevel, 20, 20, imgWidth, imgHeight)q;
 
                     // Save the PDF
                     const blob = pdf.output("blob");
