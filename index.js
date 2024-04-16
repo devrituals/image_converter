@@ -16,15 +16,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     // Convert to PDF format
                     const pdf = new pdf();
 
-			// Set the compression level (0 = no compression, 1 = maximum compression)
-const compressionLevel = 0.8; // Adjust this value between 0 and 1
+		// Set the compression level (0 = no compression, 1 = maximum compression)
+		const compressionLevel = 0.8; // Adjust this value between 0 and 1
 
 // Calculate the image dimensions based on the aspect ratio
 const imgWidth = 160;
 const imgHeight = imgData.height * (imgWidth / imgData.width);
 
-// Add the image to the PDF with the desired compression level and dimensions
-pdf.addImage(imgData, "JPEG", compressionLevel, 20, 20, imgWidth, imgHeight)q;
 
                     // Save the PDF
                     const blob = pdf.output("blob");
