@@ -1,4 +1,4 @@
-window.pdf = window.pdf.pdf;
+window.jsPDF = window.jspdf.jsPDF;
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("convertButton").addEventListener("click", function() {
         const imageInput = document.getElementById("imageInput");
@@ -15,14 +15,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (selectedFormat === "pdf") {
                     // Convert to PDF format
                     const pdf = new pdf();
+                    const imgData = e.target.result;
 
-		// Set the compression level (0 = no compression, 1 = maximum compression)
-		const compressionLevel = 0.8; // Adjust this value between 0 and 1
-
-// Calculate the image dimensions based on the aspect ratio
-const imgWidth = 160;
-const imgHeight = imgData.height * (imgWidth / imgData.width);
-
+                    // Set PDF page size and orientation
+                    pdf.addImage(imgData, "JPEG", compressionLevel, 20, 20, imgWidth, imgHeight);
 
                     // Save the PDF
                     const blob = pdf.output("blob");
