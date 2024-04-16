@@ -1,4 +1,4 @@
-window.jsPDF = window.jspdf.jsPDF;
+window.pdf = window.pdf.pdf;
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("convertButton").addEventListener("click", function() {
         const imageInput = document.getElementById("imageInput");
