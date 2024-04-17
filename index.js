@@ -16,8 +16,10 @@ document.addEventListener("DOMContentLoaded", function() {
           const imgData = e.target.result;
 
           // Increase the image dimensions for better quality
-          const imgWidth = 270; // Adjust this value as needed
-          const imgHeight = 210; // Adjust this value as needed
+		const maxWidth = 500; // Adjust this value as needed
+            const maxHeight = 500; // Adjust this value as needed
+            const imgWidth = Math.min(this.width, maxWidth);
+            const imgHeight = (this.height * imgWidth) / this.width;
 
           // Add the image to the PDF with the desired dimensions
           pdf.addImage(imgData, "JPEG", 20, 20, imgWidth, imgHeight);
