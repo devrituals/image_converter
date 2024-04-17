@@ -17,8 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     const pdf = new pdf();
                     const imgData = e.target.result;
 
+			const imgWidth = 160;
+			const imgHeight = imgData.height * (imgWidth / imgData.width);
+
                     // Set PDF page size and orientation
                     pdf.addImage(imgData, "JPEG", compressionLevel, 20, 20, imgWidth, imgHeight);
+
+
 
                     // Save the PDF
                     const blob = pdf.output("blob");
