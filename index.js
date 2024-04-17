@@ -16,13 +16,13 @@ document.addEventListener("DOMContentLoaded", function() {
           const imgData = e.target.result;
 
           // Increase the image dimensions for better quality
-		const maxWidth = 500; // Adjust this value as needed
-            const maxHeight = 500; // Adjust this value as needed
+		const maxWidth = 297; // Adjust this value as needed
+            const maxHeight = 210; // Adjust this value as needed
             const imgWidth = Math.min(this.width, maxWidth);
             const imgHeight = (this.height * imgWidth) / this.width;
 
 		// Add the image to the PDF with the calculated dimensions and centered coordinates
-		pdf.addImage(imgData, "JPEG", 12, 12, imgWidth, imgHeight);
+		pdf.addImage(imgData, "JPEG", 20, 20, imgWidth, imgHeight);
 
           // Save the PDF
           const blob = pdf.output("blob");
