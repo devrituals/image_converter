@@ -21,14 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const imgWidth = Math.min(this.width, maxWidth);
             const imgHeight = (this.height * imgWidth) / this.width;
 
-          // Add the image to the PDF with the desired dimensions
-		const pageWidth = pdf.internal.pageSize.getWidth();
-const pageHeight = pdf.internal.pageSize.getHeight();
-const x = (pageWidth - imgWidth) / 2;
-const y = (pageHeight - imgHeight) / 2;
-
-// Add the image to the PDF with the calculated dimensions and centered coordinates
-pdf.addImage(imgData, "JPEG", x, y, imgWidth, imgHeight);
+		// Add the image to the PDF with the calculated dimensions and centered coordinates
+		pdf.addImage(imgData, "JPEG", 50, 50, imgWidth, imgHeight);
 
           // Save the PDF
           const blob = pdf.output("blob");
