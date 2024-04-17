@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
           const imgData = e.target.result;
 
           // Increase the image dimensions for better quality
-		const maxWidth = 500; // Adjust this value as needed
-            const maxHeight = 500; // Adjust this value as needed
+		const maxWidth = 400; // Adjust this value as needed
+            const maxHeight = 400; // Adjust this value as needed
             const imgWidth = Math.min(this.width, maxWidth);
             const imgHeight = (this.height * imgWidth) / this.width;
 
