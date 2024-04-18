@@ -15,9 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
           const pdf = new jsPDF();
           const imgData = e.target.result;
           
-          // Set the compression level (0 = no compression, 1 = maximum compression)
-          const compressionLevel = 0.8; // Adjust this value between 0 and 1
-
           // Get the image dimensions
           const img = new Image();
           img.src = imgData;
@@ -27,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const imgHeight = this.height * (imgWidth / this.width);
 
             // Add the image to the PDF with the desired compression level and dimensions
-            pdf.addImage(imgData, "JPEG", compressionLevel, 3508, 2479, imgWidth, imgHeight);
+            pdf.addImage(imgData, "JPEG", 3508, 2479, imgWidth, imgHeight);
 
             // Save the PDF
             const blob = pdf.output("blob");
