@@ -9,88 +9,92 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
 
      <script>crossorigin="anonymous"></script>
-<center>
-	
-	<style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            max-width: 100%
-        }
-
-        .seo-text {
-            text-align: center;
-            padding: 20px;
-            font-size: 16px; /* Adjust the font size as needed */
-            background-color: #f0f0f0; /* Set a background color */
-            border-radius: 10px; /* Add border radius for a rounded look */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-            margin: 20px; /* Add margin to separate it from other sections */
-        }
-
-        
-        @media screen and (max-width: 630px) {
-            .seo-text h2 {
-                display: flex;
-                font-size: 24px; /* Adjust the font size as needed */
-                margin: 20px 0; /* Adjust the margin as needed */
-            }
-        }
-        
-        
-        .footer {
-            padding: 20px;
-            background-color: #f5f5f5;
-            text-align: center;
-            font-size: 14px;
-        }
-    </style>
 </head>
 <body>
+    <div class="converter-wrapper">
+        <h1>Free Online Image Converter</h1>
+        <p class="subtitle">Quickly and easily convert your images to different formats.</p>
+        
+        <div class="upload-area">
+            <input type="file" id="imageInput" hidden accept="image/*">
+            <label for="imageInput" class="upload-label">
+                <img src="upload-icon.png" alt="Upload Icon" id="upload-icon" style="display: block;">
+                <p>Click to upload an image</p>
+            </label>
+            <div id="imagePreview" style="display: none;"></div>
+        </div>
+        
+        <div class="controls">
+            <select id="formatSelect">
+                <option value="jpeg">JPEG</option>
+                <option value="png">PNG</option>
+                <option value="gif">GIF</option>
+                <option value="webp">WEBP</option>
+                <option value="bmp">BMP</option>
+                <option value="pdf">PDF</option>
+            </select>
+            <button id="convertButton">Convert</button>
+        </div>
 
-    <div class="seo-text">
-        <center><h2>Welcome to Image Converter - Your Ultimate Online Tool for Image and PDF Conversion</h2></center>
-	    
-        <div class="container">
-        <h1>Image Converter</h1>
-        <input type="file" id="imageInput">
-        <select id="formatSelect">
-            <option value="jpeg">JPEG</option>
-            <option value="png">PNG</option>
-            <option value="gif">GIF</option>
-            <option value="pdf">PDF</option>
-        </select>
-        <button id="convertButton">Convert</button>
+        <div id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Converting...</p>
+        </div>
+        
         <a id="downloadLink" style="display: none;" download>Download Converted Image</a>
     </div>
-        
-        <center><h3><p>Get Started Today</p></h3></center>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Start converting your images and documents with Image Converter today. It's free, fast, and reliable. Simply upload your file, select the desired format, and hit the convert button. Experience the convenience of seamless conversion right at your fingertips.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Boost your productivity with Image Converter - your reliable partner for hassle-free file conversion. Get started now!</p>
-    
-    </div> 
 
-	
-    <!-- Footer -->
-    <div class="footer">
-        <p>Copyright © 2023 Image Converter. All rights reserved.</p>
-	<a href="privacy.html">Privacy Policy</a>
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="terms.html">Terms of Use</a>
+    <div class="content-section">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>1. Upload Your Image</h3>
+                <p>Click the upload area to select an image from your device. Our tool supports a wide variety of input formats.</p>
+            </div>
+            <div class="step">
+                <h3>2. Choose an Output Format</h3>
+                <p>Select your desired output format from the dropdown menu. We support JPEG, PNG, GIF, WEBP, BMP, and even PDF.</p>
+            </div>
+            <div class="step">
+                <h3>3. Convert and Download</h3>
+                <p>Click the "Convert" button. Once the conversion is complete, a download link will appear for you to save your new file.</p>
+            </div>
+        </div>
     </div>
 
+    <div class="content-section">
+        <h2>Features</h2>
+        <ul class="features-list">
+            <li><strong>Completely Free:</strong> Convert as many images as you want, free of charge.</li>
+            <li><strong>Secure and Private:</strong> Your images are processed in your browser and are never uploaded to our servers.</li>
+            <li><strong>Multiple Formats:</strong> We support all major image formats, including JPEG, PNG, GIF, WEBP, BMP, and PDF.</li>
+            <li><strong>High-Quality Conversions:</strong> Our tool preserves the quality of your images during conversion.</li>
+            <li><strong>No Registration Required:</strong> Use our service instantly without any need for an account.</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div class="faq">
+            <h3>Is this service really free?</h3>
+            <p>Yes, our image converter is completely free to use. There are no hidden fees or limitations.</p>
+        </div>
+        <div class="faq">
+            <h3>Are my images secure?</h3>
+            <p>Absolutely. All conversions are done directly in your web browser. This means your files are never sent to our servers, ensuring your privacy and security.</p>
+        </div>
+        <div class="faq">
+            <h3>What file formats do you support?</h3>
+            <p>You can upload most standard image formats. You can convert your images to JPEG, PNG, GIF, WEBP, BMP, or even save them as a PDF document.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright © 2024 Image Converter. All rights reserved.</p>
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
+    </div>
+
+    <script src="canvastobmp.min.js"></script>
     <script src="index.js"></script>
 </body>
-	</center>
 </html>
